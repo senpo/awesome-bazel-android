@@ -1,0 +1,10 @@
+workspace_type: android
+android_sdk_platform: "android-28"
+java_language_level: 8
+
+directories:
+  java/com/awesome
+  third_party
+
+targets:
+  //java/com/awesome/...:all

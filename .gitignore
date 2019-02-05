@@ -1,3 +1,20 @@
+# Mac
+.DS_Store
+
+# Bazel
+bazel-*
+bazel-bin
+bazel-genfiles
+bazel-out
+bazel-testlogs
+bazel-workspace
+
+# Android Studio Bazel Plugin
+.project
+.aswb
+
+
+
 # Built application files
 *.apk
 *.ap_
