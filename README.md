@@ -19,6 +19,9 @@ A curated list of building Android stuff with Bazel
 * Future Planning Docs
   * [Bazel External Deps Roadmap](https://www.bazel.build/roadmaps/external-deps.html)
 
+### Practices
+* Use [gmaven_rules](https://github.com/bazelbuild/gmaven_rules) to load external repository targets for all artifacts in Google Maven Repository.
+
 ### Examples
 * https://github.com/google/startup-os/tree/master/examples/android
 * https://github.com/bazelbuild/bazel/tree/master/examples/android
