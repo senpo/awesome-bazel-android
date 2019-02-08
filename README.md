@@ -20,12 +20,14 @@ A curated list of building Android stuff with Bazel
   * [Bazel External Deps Roadmap](https://www.bazel.build/roadmaps/external-deps.html)
 
 ### Practices
-* Use [gmaven_rules](https://github.com/bazelbuild/gmaven_rules) to load external repository targets for all artifacts in Google Maven Repository.
+* Use [gmaven_rules](https://github.com/bazelbuild/gmaven_rules) to load external repository targets for all artifacts in [Google Maven Repository](https://dl.google.com/dl/android/maven2/index.html).
+  * For specific target names, check out the full list of generated targets in [gmaven.bzl](https://raw.githubusercontent.com/aj-michael/gmaven_rules/master/gmaven.bzl).
 
 ### Examples
 * https://github.com/google/startup-os/tree/master/examples/android
 * https://github.com/bazelbuild/bazel/tree/master/examples/android
-* https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/java/demo
+* [Tensorflow Lite example](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/java/demo)
+* [Firebase example](https://github.com/bazelbuild/examples/tree/master/android/firebase-cloud-messaging)
 
 ### Misc Tutorial
 * https://codelabs.developers.google.com/codelabs/bazel-android-intro/index.html
