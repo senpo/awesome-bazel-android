@@ -5,7 +5,8 @@ A curated list of building Android stuff with Bazel
 * References
   * [Workspace Rules](https://docs.bazel.build/versions/master/be/workspace.html)
   * [Android Rules](https://docs.bazel.build/versions/master/be/android.html)
-  * [Command-Line Reference](https://docs.bazel.build/versions/master/command-line-reference.html)
+  * [bazel Command-Line Reference](https://docs.bazel.build/versions/master/command-line-reference.html)
+  * [bazel mobile-install](https://docs.bazel.build/versions/master/mobile-install.html)
 * Tutorials
   * [Official Android App Tutorial](https://docs.bazel.build/versions/master/tutorial/android-app.html)
   * [Android NDK with Bazel](https://docs.bazel.build/versions/master/android-ndk.html)
@@ -19,7 +20,12 @@ A curated list of building Android stuff with Bazel
 * Future Planning Docs
   * [Bazel External Deps Roadmap](https://www.bazel.build/roadmaps/external-deps.html)
 
-### Practices
+### Android Studio with Bazel
+* https://ij.bazel.build/docs/bazel-plugin.html
+* https://ij.bazel.build/docs/import-project.html
+* https://ij.bazel.build/docs/project-views.html
+
+### Bazel Practices
 * Use [gmaven_rules](https://github.com/bazelbuild/gmaven_rules) to load external repository targets for all artifacts in [Google Maven Repository](https://dl.google.com/dl/android/maven2/index.html).
   * For specific target names, check out the full list of generated targets in [gmaven.bzl](https://raw.githubusercontent.com/aj-michael/gmaven_rules/master/gmaven.bzl).
 
