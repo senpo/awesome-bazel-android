@@ -7,6 +7,6 @@ android_binary(
     proguard_specs = [
     ],
     deps = [
-        "@maven//com/google/guava",
+        "@maven//com/google/guava:guava",
     ],
 )

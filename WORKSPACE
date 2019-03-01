@@ -24,8 +24,12 @@ load("@maven_repository_rules//maven:maven.bzl", "maven_repository_specification
 maven_repository_specification(
     name = "maven",
     artifacts = {
-        "com.google.guava:guava:25.0-jre": { "sha256": "3fd4341776428c7e0e5c18a7c10de129475b69ab9d30aeafbb5c277bb6074fa9" },
-        "com.google.code.findbugs:jsr305:3.0.1": { "sha256": "c885ce34249682bc0236b4a7d56efcc12048e6135a5baf7a9cde8ad8cda13fcd" }
+        "com.google.code.findbugs:jsr305:3.0.1": { "insecure": True },
+        "com.google.errorprone:error_prone_annotations:2.1.3": { "insecure": True },
+        "com.google.guava:guava:25.0-jre": { "insecure": True },
+        "com.google.j2objc:j2objc-annotations:1.1": { "insecure": True },
+        "org.checkerframework:checker-compat-qual:2.0.0": { "insecure": True },
+        "org.codehaus.mojo:animal-sniffer-annotations:1.14": { "insecure": True },
     },
 )
 
