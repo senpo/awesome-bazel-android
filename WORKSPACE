@@ -30,6 +30,14 @@ maven_repository_specification(
         "com.google.j2objc:j2objc-annotations:1.1": { "insecure": True },
         "org.checkerframework:checker-compat-qual:2.0.0": { "insecure": True },
         "org.codehaus.mojo:animal-sniffer-annotations:1.14": { "insecure": True },
+
+        "com.github.bumptech.glide:glide:4.9.0": { "insecure": True },
+        "com.github.bumptech.glide:gifdecoder:4.9.0": { "insecure": True },
+        "com.github.bumptech.glide:disklrucache:4.9.0": { "insecure": True },
+        "com.github.bumptech.glide:annotations:4.9.0": { "insecure": True },
+        "com.android.support:support-annotations:27.1.1": { "insecure": True },
+        "com.android.support:support-fragment:27.1.1": { "insecure": True },
+        "com.android.support:animated-vector-drawable:27.1.1": { "insecure": True },
     },
 )
 
