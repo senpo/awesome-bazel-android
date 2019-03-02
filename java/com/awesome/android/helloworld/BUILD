@@ -8,6 +8,6 @@ android_binary(
     ],
     deps = [
         "@maven//com/google/guava:guava",
-        "@maven//com.github.bumptech.glide:glide",
+        "@maven//com/github/bumptech/glide:glide",
     ],
 )
