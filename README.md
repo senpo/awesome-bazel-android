@@ -26,9 +26,7 @@ A curated list of building Android stuff with Bazel
 * https://ij.bazel.build/docs/project-views.html
 
 ### Bazel Practices
-* Use [bazel_maven_repository](https://github.com/square/bazel_maven_repository) to load maven artifacts.
-* Use [gmaven_rules](https://github.com/bazelbuild/gmaven_rules) to load external repository targets for all artifacts in [Google Maven Repository](https://dl.google.com/dl/android/maven2/index.html).
-  * For specific target names, check out the full list of generated targets in [gmaven.bzl](https://raw.githubusercontent.com/aj-michael/gmaven_rules/master/gmaven.bzl).
+* Use [bazel_maven_repository](https://github.com/square/bazel_maven_repository) or [rules_maven](https://github.com/jin/rules_maven) to fetch and resolve Maven artifacts, including the ones on Google Maven Repository.
 
 ### Examples
 * https://github.com/google/startup-os/tree/master/examples/android
