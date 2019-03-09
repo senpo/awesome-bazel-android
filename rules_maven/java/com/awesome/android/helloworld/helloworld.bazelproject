@@ -7,3 +7,6 @@ directories:
 
 targets:
   //java/com/awesome/...:all
+
+import_run_configurations:
+  java/com/awesome/android/helloworld/helloworld.xml
