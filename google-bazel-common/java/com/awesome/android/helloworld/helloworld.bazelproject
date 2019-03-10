@@ -10,3 +10,6 @@ targets:
 
 import_run_configurations:
   java/com/awesome/android/helloworld/helloworld.xml
+
+build_flags:
+  --experimental_desugar_java8_libs
