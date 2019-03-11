@@ -21,6 +21,29 @@ http_archive(
     sha256 = MAVEN_REPOSITORY_RULES_SHA,
 )
 load("@maven_repository_rules//maven:maven.bzl", "maven_repository_specification")
+
+DAGGER_PROCESSOR_SNIPPET = """
+# use this target
+java_library(
+    name = "dagger",
+    exports = [":dagger_api"],
+    exported_plugins = [":dagger_plugin"]
+)
+
+# alternatively-named import of the raw dagger library.
+maven_jvm_artifact(
+    name = "dagger_api",
+    artifact = "com.google.dagger:dagger:2.20"
+)
+
+java_plugin(
+    name = "dagger_plugin",
+    processor_class = "dagger.internal.codegen.ComponentProcessor",
+    generates_api = True,
+    deps = [":dagger_compiler"],
+)
+"""
+
 maven_repository_specification(
     name = "maven",
     repository_urls = [
@@ -28,12 +51,26 @@ maven_repository_specification(
         "https://dl.google.com/dl/android/maven2",
     ],
     artifacts = {
+        "javax.annotation:jsr250-api:1.0": { "insecure": True },
+        "javax.inject:javax.inject:1": { "insecure": True },
+        "com.google.code.findbugs:jsr305:3.0.2": { "insecure": True },
+
         "com.google.guava:guava:25.0-jre": { "insecure": True },
-        "com.google.code.findbugs:jsr305:3.0.1": { "insecure": True },
         "com.google.errorprone:error_prone_annotations:2.1.3": { "insecure": True },
         "com.google.j2objc:j2objc-annotations:1.1": { "insecure": True },
         "org.checkerframework:checker-compat-qual:2.0.0": { "insecure": True },
         "org.codehaus.mojo:animal-sniffer-annotations:1.14": { "insecure": True },
+
+        "com.google.dagger:dagger:2.20": {
+            "insecure": True,
+            "build_snippet": DAGGER_PROCESSOR_SNIPPET,
+        },
+        "com.google.dagger:dagger-compiler:2.20": { "insecure": True },
+        "com.google.dagger:dagger-producers:2.20": { "insecure": True },
+        "com.google.dagger:dagger-spi:2.20": { "insecure": True },
+        "com.google.googlejavaformat:google-java-format:1.5": { "insecure": True },
+        "com.google.errorprone:javac-shaded:9-dev-r4023-3": { "insecure": True },
+        "com.squareup:javapoet:1.11.1": { "insecure": True },
 
         "com.github.bumptech.glide:glide:4.9.0:aar": { "insecure": True },
         "com.github.bumptech.glide:gifdecoder:4.9.0:aar": { "insecure": True },
@@ -53,5 +90,10 @@ maven_repository_specification(
         "android.arch.core:common:1.1.0": { "insecure": True },
         "android.arch.core:runtime:1.1.0:aar": { "insecure": True },
     },
+    dependency_target_substitutes = {
+        "com.google.dagger": {
+            "@maven//com/google/dagger:dagger": "@maven//com/google/dagger:dagger_api"
+        },
+    }
 )
 
