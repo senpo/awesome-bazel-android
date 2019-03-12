@@ -1,0 +1,1 @@
+The most minimal Android project.
