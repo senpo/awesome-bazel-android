@@ -21,14 +21,36 @@ http_archive(
 )
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
+load("@rules_jvm_external//:specs.bzl", "maven")
 
 maven_install(
+    name = "maven",
     artifacts = [
         "junit:junit:4.12",
         "android.arch.lifecycle:common:1.1.1",
         "android.arch.lifecycle:viewmodel:1.1.1",
         "androidx.test.espresso:espresso-web:3.1.1",
         "com.android.support:design:27.0.2",
+
+        "com.google.auto:auto-common:0.10",
+        "com.google.auto.factory:auto-factory:1.0-beta6",
+        "com.google.auto.service:auto-service:1.0-rc4",
+        "com.google.auto.value:auto-value-annotations:1.6.3",
+        "com.google.auto.value:auto-value:1.6.3",
+
+        # https://github.com/bazelbuild/rules_jvm_external#artifact-exclusion
+        maven.artifact(
+            group = "com.google.guava",
+            artifact = "guava",
+            version = "27.0-jre",
+            exclusions = [
+                maven.exclusion(
+                    group = "org.codehaus.mojo",
+                    artifact = "animal-sniffer-annotations"
+                ),
+                "com.google.j2objc:j2objc-annotations",
+            ]
+        ),
     ],
     repositories = [
         #"https://bintray.com/bintray/jcenter",

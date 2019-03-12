@@ -14,5 +14,6 @@ android_binary(
         artifact("androidx.test.espresso:espresso-web"),
         artifact("junit:junit"),
         artifact("com.android.support:design"),
+        "//third_party/java/auto:value",
     ],
 )

@@ -4,9 +4,11 @@ java_language_level: 8
 
 directories:
   java/com/awesome
+  third_party
 
 targets:
   //java/com/awesome/...:all
+  //third_party/...:all
 
 import_run_configurations:
   java/com/awesome/android/helloworld/helloworld.xml
