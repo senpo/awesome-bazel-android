@@ -28,7 +28,7 @@ A curated list of building Android stuff with Bazel
 * https://ij.bazel.build/docs/project-views.html
 
 ### Bazel Practices
-* Use [bazel_maven_repository](https://github.com/square/bazel_maven_repository) or [rules_maven](https://github.com/jin/rules_maven) to fetch and resolve Maven artifacts, including the ones on Google Maven Repository.
+* Use [bazel_maven_repository](https://github.com/square/bazel_maven_repository) or [rules_jvm_external](https://github.com/bazelbuild/rules_jvm_external) to fetch and resolve Maven artifacts, including the ones on Google Maven Repository.
 * Build the [bazel plugin from source](https://github.com/bazelbuild/intellij). Why? The version of Bazel plugin on the JetBrains' plugin repository is not always built for the latest Android Studio version. Then you won’t be able to find it while you are in the latest Android Studio.
 
 ### Examples
