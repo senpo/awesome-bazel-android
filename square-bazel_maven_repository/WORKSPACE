@@ -103,6 +103,9 @@ java_plugin(
 )
 """
 
+ANDROID_SUPPORT_VERSION = "28.0.0"
+ANDROID_ARCH_VERSION = "1.1.1"
+
 maven_repository_specification(
     name = "maven",
     repository_urls = [
@@ -110,9 +113,42 @@ maven_repository_specification(
         "https://dl.google.com/dl/android/maven2",
     ],
     artifacts = {
+        "android.arch.core:common:%s" % ANDROID_ARCH_VERSION: { "insecure": True },
+        "android.arch.core:runtime:%s:aar" % ANDROID_ARCH_VERSION: { "insecure": True },
+        "android.arch.lifecycle:common:%s" % ANDROID_ARCH_VERSION: { "insecure": True },
+        "android.arch.lifecycle:livedata:%s:aar" % ANDROID_ARCH_VERSION: { "insecure": True },
+        "android.arch.lifecycle:livedata-core:%s:aar" % ANDROID_ARCH_VERSION: { "insecure": True },
+        "android.arch.lifecycle:runtime:%s:aar" % ANDROID_ARCH_VERSION: { "insecure": True },
+        "android.arch.lifecycle:viewmodel:%s:aar" % ANDROID_ARCH_VERSION: { "insecure": True },
+
+        "com.android.support:animated-vector-drawable:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:appcompat-v7:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:asynclayoutinflater:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:collections:%s" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:coordinatorlayout:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:cursoradapter:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:customview:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:documentfile:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:drawerlayout:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:interpolator:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:loader:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:localbroadcastmanager:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:print:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:slidingpanelayout:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:support-annotations:%s" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:support-compat:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:support-core-ui:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:support-core-utils:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:support-fragment:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:support-vector-drawable:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:swiperefreshlayout:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:versionedparcelable:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+        "com.android.support:viewpager:%s:aar" % ANDROID_SUPPORT_VERSION: { "insecure": True },
+
         "javax.annotation:jsr250-api:1.0": { "insecure": True },
         "javax.inject:javax.inject:1": { "insecure": True },
         "com.google.code.findbugs:jsr305:3.0.2": { "insecure": True },
+        "com.squareup:javapoet:1.11.1": { "insecure": True },
 
         "com.google.guava:guava:25.0-jre": { "insecure": True },
         "com.google.errorprone:error_prone_annotations:2.1.3": { "insecure": True },
@@ -138,25 +174,11 @@ maven_repository_specification(
         "com.google.dagger:dagger-spi:2.20": { "insecure": True },
         "com.google.googlejavaformat:google-java-format:1.5": { "insecure": True },
         "com.google.errorprone:javac-shaded:9-dev-r4023-3": { "insecure": True },
-        "com.squareup:javapoet:1.11.1": { "insecure": True },
 
         "com.github.bumptech.glide:glide:4.9.0:aar": { "insecure": True },
         "com.github.bumptech.glide:gifdecoder:4.9.0:aar": { "insecure": True },
         "com.github.bumptech.glide:disklrucache:4.9.0": { "insecure": True },
         "com.github.bumptech.glide:annotations:4.9.0": { "insecure": True },
-        "com.android.support:animated-vector-drawable:27.1.1:aar": { "insecure": True },
-        "com.android.support:support-annotations:27.1.1": { "insecure": True },
-        "com.android.support:support-compat:27.1.1:aar": { "insecure": True },
-        "com.android.support:support-core-ui:27.1.1:aar": { "insecure": True },
-        "com.android.support:support-core-utils:27.1.1:aar": { "insecure": True },
-        "com.android.support:support-fragment:27.1.1:aar": { "insecure": True },
-        "com.android.support:support-vector-drawable:27.1.1:aar": { "insecure": True },
-        "android.arch.lifecycle:livedata-core:1.1.0:aar": { "insecure": True },
-        "android.arch.lifecycle:runtime:1.1.0:aar": { "insecure": True },
-        "android.arch.lifecycle:viewmodel:1.1.0:aar": { "insecure": True },
-        "android.arch.lifecycle:common:1.1.0": { "insecure": True },
-        "android.arch.core:common:1.1.0": { "insecure": True },
-        "android.arch.core:runtime:1.1.0:aar": { "insecure": True },
     },
     dependency_target_substitutes = {
         "com.google.auto.value": {
@@ -167,4 +189,3 @@ maven_repository_specification(
         },
     }
 )
-
