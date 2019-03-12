@@ -44,6 +44,65 @@ java_plugin(
 )
 """
 
+# See https://github.com/senpo/bazel-common/blob/master/third_party/java/auto/BUILD
+AUTO_VALUE_SNIPPET = """
+package(default_visibility = ["//visibility:public"])
+
+java_library(
+    name = "value",
+    exports = [
+        #":value_api",
+        "@maven//com/google/auto/value:auto_value_annotations",
+    ],
+    exported_plugins = [
+        ":auto_annotation_processor",
+        ":auto_oneof_processor",
+        ":auto_value_processor",
+    ]
+)
+
+# alternatively-named import of the raw library.
+maven_jvm_artifact(
+    name = "value_api",
+    artifact = "com.google.auto.value:auto-value:1.6.3"
+)
+
+java_plugin(
+    name = "auto_annotation_processor",
+    processor_class = "com.google.auto.value.processor.AutoAnnotationProcessor",
+    visibility = ["//visibility:private"],
+    deps = [
+        ":value_api",
+        "@maven//com/google/auto:auto_common",
+        "@maven//com/google/auto/service:auto_service",
+        "@maven//com/google/guava:guava",
+    ],
+)
+
+java_plugin(
+    name = "auto_oneof_processor",
+    processor_class = "com.google.auto.value.processor.AutoOneOfProcessor",
+    visibility = ["//visibility:private"],
+    deps = [
+        ":value_api",
+        "@maven//com/google/auto:auto_common",
+        "@maven//com/google/auto/service:auto_service",
+        "@maven//com/google/guava:guava",
+    ],
+)
+
+java_plugin(
+    name = "auto_value_processor",
+    processor_class = "com.google.auto.value.processor.AutoValueProcessor",
+    deps = [
+        ":value_api",
+        "@maven//com/google/auto:auto_common",
+        "@maven//com/google/auto/service:auto_service",
+        "@maven//com/google/guava:guava",
+    ],
+)
+"""
+
 maven_repository_specification(
     name = "maven",
     repository_urls = [
@@ -60,6 +119,15 @@ maven_repository_specification(
         "com.google.j2objc:j2objc-annotations:1.1": { "insecure": True },
         "org.checkerframework:checker-compat-qual:2.0.0": { "insecure": True },
         "org.codehaus.mojo:animal-sniffer-annotations:1.14": { "insecure": True },
+
+        "com.google.auto:auto-common:0.10": { "insecure": True },
+        "com.google.auto.factory:auto-factory:1.0-beta6": { "insecure": True },
+        "com.google.auto.service:auto-service:1.0-rc4": { "insecure": True },
+        "com.google.auto.value:auto-value-annotations:1.6.3": { "insecure": True },
+        "com.google.auto.value:auto-value:1.6.3": {
+            "insecure": True,
+            "build_snippet": AUTO_VALUE_SNIPPET,
+        },
 
         "com.google.dagger:dagger:2.20": {
             "insecure": True,
@@ -91,6 +159,9 @@ maven_repository_specification(
         "android.arch.core:runtime:1.1.0:aar": { "insecure": True },
     },
     dependency_target_substitutes = {
+        "com.google.auto.value": {
+            "@maven//com/google/auto/value:value": "@maven//com/google/auto/value:value_api"
+        },
         "com.google.dagger": {
             "@maven//com/google/dagger:dagger": "@maven//com/google/dagger:dagger_api"
         },
