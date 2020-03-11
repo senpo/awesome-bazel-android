@@ -7,7 +7,8 @@ directories:
   third_party
 
 targets:
-  //java/com/awesome/...:all
+  //java/com/awesome/android/hello/...:all
+  //java/com/awesome/android/helloworld/...:all
   //third_party/...:all
 
 import_run_configurations:
@@ -17,4 +18,4 @@ build_flags:
   --experimental_desugar_java8_libs
 
 sync_flags:
-  --incompatible_depset_is_not_iterable=false
+  #--incompatible_depset_is_not_iterable=false
