@@ -8,4 +8,5 @@ android_library(
 cc_library(
     name = "my_nativelib",
     srcs = ["my_native_lib.cc"],
+    alwayslink = True,
 )

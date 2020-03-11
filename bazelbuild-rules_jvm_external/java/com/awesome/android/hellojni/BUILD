@@ -7,6 +7,6 @@ android_binary(
     multidex = "native",
     resource_files = glob(["res/**"]),
     deps = [
-        "//java/com/senpo/android/hello/hellojni/nativelib",
+        "//java/com/awesome/android/hellojni/nativelib",
     ],
 )

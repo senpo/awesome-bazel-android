@@ -4,10 +4,10 @@ android_sdk_repository(
     build_tools_version = "29.0.3",
 )
 
-#android_ndk_repository(
-#    name = "androidndk",
-#    path = "/Users/senpo/Library/Android/sdk/ndk/21.0.6113669",
-#)
+android_ndk_repository(
+    name = "androidndk",
+    path = "/Users/senpo/Library/Android/sdk/ndk/20.1.5948944",
+)
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 

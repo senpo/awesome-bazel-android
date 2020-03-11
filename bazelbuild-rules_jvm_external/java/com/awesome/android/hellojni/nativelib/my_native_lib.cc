@@ -15,7 +15,7 @@ const char* hello = "Hello JNI";
 extern "C"
 JNIEXPORT jstring
 JNICALL
-Java_com_senpo_android_hello_hellojni_nativelib_NativeLib_stringFromJNI(JNIEnv *env, jclass clazz) {
+Java_com_awesome_android_hellojni_nativelib_NativeLib_stringFromJNI(JNIEnv *env, jclass clazz) {
   // return NewStringLatin1(env, hello);
   return env->NewStringUTF("Hello from JNI");
 }

@@ -1,4 +1,4 @@
-package com.senpo.android.hello.hellojni.nativelib;
+package com.awesome.android.hellojni.nativelib;
 
 public class NativeLib {
 

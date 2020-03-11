@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.senpo.android.hello.hellojni"
+  package="com.awesome.android.hellojni"
   android:versionCode="1"
   android:versionName="1.0" >
 
@@ -10,7 +10,7 @@
     <application
       android:label="hellojni">
         <activity
-          android:name="com.senpo.android.hello.hellojni.MainActivity">
+          android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

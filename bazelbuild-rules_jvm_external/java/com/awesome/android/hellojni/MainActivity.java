@@ -1,10 +1,10 @@
-package com.senpo.android.hello.hellojni;
+package com.awesome.android.hellojni;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.senpo.android.hello.hellojni.nativelib.NativeLib;
+import com.awesome.android.hellojni.nativelib.NativeLib;
 
 public class MainActivity extends Activity {
 
