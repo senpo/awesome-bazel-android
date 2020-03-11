@@ -7,7 +7,8 @@ directories:
   third_party
 
 targets:
-  //java/com/awesome/...:all
+  //java/com/awesome/android/hello/...:all
+  //java/com/awesome/android/helloworld/...:all
   //third_party/...:all
 
 import_run_configurations:
