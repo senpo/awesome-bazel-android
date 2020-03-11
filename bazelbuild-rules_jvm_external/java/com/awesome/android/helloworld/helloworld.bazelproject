@@ -16,5 +16,8 @@ import_run_configurations:
 build_flags:
   --experimental_desugar_java8_libs
 
+  # https://github.com/bazelbuild/bazel/issues/8872
+  --strategy=Desugar=sandboxed
+
 sync_flags:
-  --incompatible_depset_is_not_iterable=false
+  #--incompatible_depset_is_not_iterable=false
